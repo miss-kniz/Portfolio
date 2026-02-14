@@ -11,7 +11,7 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
-    "next": "16.0.3",
+    "next": "16.0.10",
     "phosphor-react": "^1.4.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
