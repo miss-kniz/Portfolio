@@ -8,7 +8,7 @@
   --primary-light: #E7D6F5;
   --primary-dark: #4A148C;
   --font-geist-sans: "Inter", sans-serif;
-  --color-black-light: #666666;
+  --black-light: #515050;
 }
 
 @theme inline {
@@ -19,6 +19,7 @@
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
   --color-black-light: var(--color-black-light);
+  --gray-light:var(--black-light);
   /* fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -26,7 +27,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0e0516;
     --foreground: #ededed;
   }
 }
@@ -49,4 +50,28 @@ html {
 }
 button{
   cursor: pointer;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Infinite horizontal scroll animation */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Utility class */
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
 }

@@ -1,12 +1,12 @@
-// app/components/HeroSection.tsx
 "use client";
 
 import Image from "next/image";
-import { Star } from "phosphor-react";
+import { Info, Star } from "phosphor-react";
+import Button from "./Button";
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-10 pb-20 md:pt-24 md:pb-28">
+    <section className="relative pt-10 md:pt-24 md:pb-28">
       {/* Left Curtain */}
       <div className="absolute left-0 md:-top-50 -top-80 w-1/3 h-dvh opacity-30 md:opacity-50">
         <Image
@@ -38,33 +38,29 @@ export default function HeroSection() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-2xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-[38px] md:text-7xl font-bold leading-tight">
             Turning <span className="text-primary">Ideas Into</span> High-
             <br />
             Performing <span className="text-primary">Digital Products</span>
           </h1>
 
           {/* Subheading */}
-          <p className="md:text-xl text-gray-600 max-w-3xl">
+          <p className="md:text-xl text-gray-light max-w-3xl">
             I design and build fast, responsive websites and small web apps that
             help startups and businesses convert visitors into customers.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-md">
-              Book Clarity
-            </button>
-            <button className="px-6 py-3 border border-gray-300 text-gray-900 rounded-full font-semibold hover:bg-gray-50 transition-colors">
-              Connect on LinkedIn
-            </button>
+          <div className="flex justify-center gap-4">
+            <Button variant="primary">Book Clarity</Button>
+            <Button variant="ghost">Connect on LinkedIn</Button>
           </div>
 
           {/* Section Divider */}
           <div className="flex items-center gap-3 text-gray-500 text-sm">
-            <div className="w-6 h-px bg-gray-300"></div>
+            <Info size={20} />
+
             <span>Some Project Highlights Are Below</span>
-            <div className="w-6 h-px bg-gray-300"></div>
           </div>
         </div>
       </div>
