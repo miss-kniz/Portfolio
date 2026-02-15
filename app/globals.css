@@ -11,14 +11,14 @@
   --black-light: #666666;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0e0516;
     --foreground: #ededed;
     --black-light: #99a1af;
     --primary-light: #7a2cbf36;
   }
-}
+} */
 
 @theme inline {
   /* colors */
