@@ -90,7 +90,10 @@ export default function HeroSection() {
           <div className="flex items-center gap-3 text-gray-500 text-sm">
             <Info size={20} />
 
-            <span>Some Project Highlights Are Below</span>
+            <span>
+              Some <span className="font-bold">Project</span> Highlights Are
+              Below
+            </span>
           </div>
         </div>
       </div>

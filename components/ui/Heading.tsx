@@ -2,7 +2,8 @@ import React from "react";
 
 type HeadingLevel = "h1" | "h2" | "h3";
 
-interface HeadingProps {
+interface HeadingProps
+{
   as?: HeadingLevel;
   normalText: any;
   highlightText?: string;
@@ -16,13 +17,14 @@ export default function Heading({
   highlightText,
   center = true,
   className = "",
-}: HeadingProps) {
+}: HeadingProps)
+{
   const Tag = as;
 
   const sizeStyles = {
     h1: "text-4xl md:text-6xl lg:text-7xl",
     h2: "text-3xl md:text-5xl",
-    h3: "text-2xl md:text-3xl",
+    h3: "text-[13px] md:text-lg",
   };
 
   return (
