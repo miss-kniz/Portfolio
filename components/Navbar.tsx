@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Button from "./ui/Button";
 
-export default function Navbar() {
+export default function Navbar()
+{
   return (
     <header className="sticky top-0 z-50 bg-[#ffffff00] backdrop-blur-sm border-b border-gray-100 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
         <Link href="/" className="text-xl font-bold tracking-tight">
           Mehak
         </Link>

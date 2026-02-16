@@ -3,6 +3,7 @@ import { services } from "@/types/services";
 import Heading from "../ui/Heading";
 import ServiceCard from "../ui/ServiceCard";
 import SubHeadingContainer, { SimplePara } from "../ui/SubHeadingContainer";
+import { Lightbulb } from "phosphor-react";
 
 const ServicesSection = () =>
 {
@@ -15,9 +16,15 @@ const ServicesSection = () =>
 
   return (
     <section className="bg-primary-light px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center my-6 md:mb-12">
-          <SubHeadingContainer>Service Section</SubHeadingContainer>
+          <SubHeadingContainer> <div className="flex items-center gap-2 relative justify-center">
+
+            <span className="inline-block py-1 px-2 rounded-full bg-white">
+              <Lightbulb
+                weight="fill"
+                className="w-4 h-4 text-yellow-500"
+              /></span>Service Section</div></SubHeadingContainer>
           <Heading as="h2" normalText="What I" highlightText="Help You Build" />
           <SimplePara className="mt-2">
             From clean landing pages to full web apps, I focus on building fast,
@@ -25,7 +32,7 @@ const ServicesSection = () =>
           </SimplePara>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {services.map((service) => (
             <ServiceCard
               key={service.id}

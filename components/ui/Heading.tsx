@@ -22,8 +22,8 @@ export default function Heading({
   const Tag = as;
 
   const sizeStyles = {
-    h1: "text-4xl md:text-6xl lg:text-7xl",
-    h2: "text-3xl md:text-5xl",
+    h1: "text-4xl md:text-5xl lg:text-7xl",
+    h2: "text-3xl md:text-4xl lg:text-5xl",
     h3: "text-[13px] md:text-lg",
   };
 

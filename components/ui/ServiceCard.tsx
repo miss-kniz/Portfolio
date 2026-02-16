@@ -10,14 +10,13 @@ interface ServiceCardProps
     imageUrl: string;
     onClick?: () => void;
 }
-//<div >
 
 
 const ServiceCard = ({ id, title, description, imageUrl, onClick }: ServiceCardProps) =>
 {
     return (
         <div
-            className="group p-1 w-full rounded-xl lg:p-4 overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            className="group p-1 w-full rounded-xl overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             onClick={onClick}
         >
             <div className="w-full aspect-square overflow-hidden rounded-xl shadow-lg">
@@ -31,7 +30,7 @@ const ServiceCard = ({ id, title, description, imageUrl, onClick }: ServiceCardP
 
 
             {/* Content */}
-            <div className="p-1 pt-2 md:p-4">
+            <div className="p-1 pt-2">
                 {/* Badge */}
                 <span className="hidden md:inline-block mb-2 px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
                     #{id.toString().padStart(2, '0')}

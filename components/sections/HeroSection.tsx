@@ -6,11 +6,12 @@ import Button from "../ui/Button";
 import SubHeadingContainer from "../ui/SubHeadingContainer";
 import Heading from "../ui/Heading";
 
-export default function HeroSection() {
+export default function HeroSection()
+{
   return (
-    <section className="relative pt-10 md:pt-24">
+    <section className="relative pt-10 md:pt-16">
       {/* Left Curtain */}
-      <div className="absolute left-0 md:-top-50 -top-80 w-1/3 h-dvh opacity-30 md:opacity-50">
+      <div className="absolute left-0 md:-top-65 lg:-top-50 -top-80 w-1/3 h-dvh opacity-30 md:opacity-50">
         <Image
           src="/left-curtain.svg"
           alt="Left decorative curtain"
@@ -20,7 +21,7 @@ export default function HeroSection() {
       </div>
 
       {/* Right Curtain */}
-      <div className="absolute right-0 md:-top-50 -top-80 w-1/3 h-dvh opacity-30 md:opacity-50">
+      <div className="absolute right-0 md:-top-65 lg:-top-50 -top-80 w-1/3 h-dvh opacity-30 md:opacity-50">
         <Image
           src="/right-curtain.svg"
           alt="Right decorative curtain"
@@ -30,19 +31,22 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center max-w-5xl mx-auto text-center space-y-6 md:space-y-8">
+        <div className="flex flex-col items-center max-w-7xl mx-auto text-center space-y-6 md:space-y-8">
           {/* Trust Badge */}
           <SubHeadingContainer>
             <div className="flex items-center gap-2 relative justify-center">
-              <Star
-                weight="fill"
-                className="w-4 h-4 hidden md:inline-block text-yellow-500"
-              />
-              <div className="md:hidden text-yellow-500 flex absolute -top-5 text-lg">
-                <Star weight="fill" />
-                <Star weight="fill" />
-                <Star weight="fill" />
-              </div>
+              <span className="inline-block py-1 px-2 rounded-full bg-white">
+
+                <Star
+                  weight="fill"
+                  className="w-4 h-4 hidden md:inline-block text-yellow-500"
+                />
+                <div className="md:hidden text-yellow-500 flex absolute -top-5 text-lg">
+                  <Star weight="fill" />
+                  <Star weight="fill" />
+                  <Star weight="fill" />
+                </div>
+              </span>
               <span className="text-xs md:text-sm">
                 Trusted by founders, startups, and growing teams worldwide.
               </span>

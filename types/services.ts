@@ -27,39 +27,41 @@ export const services: ServiceItem[] = [
     {
         id: 1,
         title: "Landing Page Development",
-        description: "High-converting, fast, and SEO-optimized landing pages designed to capture leads and drive action.",
+        description: "Fast, SEO-friendly pages that convert.",
         imageUrl: "services/landing-page.webp",
         isDemo: false
     },
     {
         id: 2,
         title: "Small SaaS Applications",
-        description: "Lightweight, scalable SaaS products built for speed, reliability, and future growth.",
+        description: "Lightweight, scalable apps for growth.",
         imageUrl: "services/SaaS.webp",
         isDemo: true
     },
     {
         id: 3,
-        title: "Website Responsiveness Optimization",
-        description: "I make your website feel perfect on every screen—desktop, tablet, and mobile.",
+        title: "Website Performance Optimization",
+        description: "Websites that load instantly on any device.",
         imageUrl: "services/optimization.webp",
         isDemo: true
     },
     {
         id: 4,
         title: "Layout Fixes & UI Improvements",
-        description: "Clean up broken layouts, improve usability, and polish your interface for a professional finish.",
+        description: "Polished layouts with smooth responsiveness.",
         imageUrl: "services/ui-fixes.webp",
         isDemo: true
     },
     {
         id: 5,
         title: "Figma / XD to Code with SEO",
-        description: "Pixel-perfect conversions from design to clean, structured, and search-optimized code.",
+        description: "Pixel-perfect, SEO-ready design-to-code.",
         imageUrl: "services/figma-to-code.webp",
         isDemo: true
     }
 ];
+
+
 
 // Export your projects array (empty for now - add as you get client work)
 export const projects: ProjectItem[] = [
