@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import InfiniteScrollProjects from "@/components/sections/InfiniteScrollProjects";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
       <HeroSection />
       <InfiniteScrollProjects />
       <ServicesSection />
+      <ProjectsSection />
     </div>
   );
 }
