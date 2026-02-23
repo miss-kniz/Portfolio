@@ -1,38 +1,82 @@
-export interface ProjectItem {
+export interface ProjectItem
+{
   id: number;
   title: string;
   description: string;
-  serviceType: string; // Links to service.id
+  categories: string[]; // instead of single serviceType
   imageUrl: string;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
-  isClientProject?: boolean; // True for paid work, false for demos
-  result?: string; // Optional metric/result for client projects
+  isClientProject?: boolean;
+  result?: string;
 }
+
 export const projects: ProjectItem[] = [
-  // Client projects go here
   {
     id: 1,
-    title: "E-commerce Dashboard",
-    description: "Real-time sales and inventory tracking dashboard.",
-    serviceType: "Dashboard UI/UX", // Matches service.id
-    imageUrl: "projects/1.webp",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Redux"],
-    liveUrl: "https://example.com", // Replace with actual URLs
-    githubUrl: "https://github.com/username/project",
+    title: "LeadLyft",
+    categories: ["Full-stack", "SaaS"],
+    imageUrl: "projects/leadlyft.webp",
+    technologies: ["React", "Redux Toolkit", "RTK Query", "Pusher", "CSS", "Prisma"],
+    liveUrl: "https://app.leadlyft.com",
+    githubUrl: undefined,
     isClientProject: true,
-    result: "+25% increase in admin efficiency",
+    description: "- Coaching platform for C-level workers",
   },
-  // Personal projects go here
   {
     id: 2,
-    title: "Fitness Tracker App",
-    description: "PWA for workout logging with offline sync.",
-    serviceType: "Progressive Web Apps",
-    imageUrl: "projects/2.webp",
-    technologies: ["React", "PWA", "IndexedDB", "Tailwind CSS"],
-    githubUrl: "https://github.com/username/fitness-app",
+    title: "LinkSpire",
+    categories: ["Full-stack"],
+    imageUrl: "projects/linkspire.webp",
+    technologies: ["HTML", "Bootstrap", "JavaScript", "Node.js", "Express", "PostgreSQL", "REST API", "UI design"],
+    liveUrl: undefined,
+    githubUrl: "https://github.com/kaniz-naqvi/LikhSpire",
     isClientProject: false,
+    description: "- Blogging CRUD platform",
+  },
+  {
+    id: 3,
+    title: "Prep & Plate",
+    categories: ["Full-stack", "SaaS"],
+    imageUrl: "projects/prep-plate.webp",
+    technologies: ["Tailwind", "Redux Toolkit", "RTK Thunks", "React", "Express js", "Prisma"],
+    liveUrl: undefined,
+    githubUrl: undefined,
+    isClientProject: false,
+    description: "- Recipe and meal planning SaaS",
+  },
+  {
+    id: 4,
+    title: "Amazon Clone",
+    categories: ["Frontend"],
+    imageUrl: "projects/amazon-clone.webp",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://kaniz-naqvi.github.io/Amazon/",
+    githubUrl: "https://github.com/kaniz-naqvi/Amazon",
+    isClientProject: false,
+    description: "- E-commerce UI clone",
+  },
+  {
+    id: 5,
+    title: "Cherished Lives",
+    categories: ["Frontend", "Figma to Code"],
+    imageUrl: "services/figma-to-code.webp",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://app.cherishedlives.com",
+    githubUrl: undefined,
+    isClientProject: true,
+    description: "- Memorial platform, implemented pixel-perfect Figma to code",
+  },
+  {
+    id: 6,
+    title: "Movie Land",
+    categories: ["Frontend"],
+    imageUrl: "projects/movie-land.webp",
+    technologies: ["React", "Axios"],
+    liveUrl: "https://movie-app-xi-steel-47.vercel.app/",
+    githubUrl: "https://github.com/kaniz-naqvi/Movie-App",
+    isClientProject: false,
+    description: "- Real-time movie search app",
   },
 ];
