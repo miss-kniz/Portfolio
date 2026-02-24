@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
+{
   variant?: "primary" | "outline" | "ghost";
   size?: "sm" | "default" | "lg";
   children: React.ReactNode;
@@ -10,15 +11,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     { variant = "primary", size = "default", children, className, ...props },
     ref,
-  ) => {
+  ) =>
+  {
     const baseClasses =
-      "inline-flex items-center justify-center whitespace-nowrap rounded-full font-semibold transition-colors text-center tracking-wide";
+      "inline-flex items-center justify-center whitespace-nowrap rounded-full transition-colors text-center tracking-wide";
 
     const variantClasses = {
-      primary: "bg-primary text-white hover:bg-primary-dark shadow-md",
+      primary: "bg-primary font-semibold text-white hover:bg-primary-dark shadow-md",
       outline:
-        "border border-primary text-primary bg-transparent hover:bg-primary-light",
-      ghost: "border border-gray-300 text-foreground hover:bg-gray-50",
+        "border border-primary font-semibold text-primary bg-transparent hover:bg-primary-light",
+      ghost: "text-primary bg-primary-light",
     };
 
     const sizeClasses = {

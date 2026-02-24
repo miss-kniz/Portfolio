@@ -35,18 +35,18 @@ export default function HeroSection()
           {/* Trust Badge */}
           <SubHeadingContainer>
             <div className="flex items-center gap-2 relative justify-center">
-              <span className="inline-block py-1 px-2 rounded-full bg-white">
+              <span className="hidden md:inline-block  py-1 px-2 rounded-full bg-white">
 
                 <Star
                   weight="fill"
-                  className="w-4 h-4 hidden md:inline-block text-yellow-500"
+                  className="w-4 h-4 text-yellow-500"
                 />
-                <div className="md:hidden text-yellow-500 flex absolute -top-5 text-lg">
-                  <Star weight="fill" />
-                  <Star weight="fill" />
-                  <Star weight="fill" />
-                </div>
               </span>
+              <div className="md:hidden text-yellow-500 flex absolute -top-5 text-lg">
+                <Star weight="fill" />
+                <Star weight="fill" />
+                <Star weight="fill" />
+              </div>
               <span className="text-xs md:text-sm">
                 Trusted by founders, startups, and growing teams worldwide.
               </span>
