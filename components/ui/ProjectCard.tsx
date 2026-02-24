@@ -1,3 +1,5 @@
+import Heading from "./Heading";
+
 interface ProjectCardProps
 {
   title: string;
@@ -19,7 +21,7 @@ export default function ProjectCard({
 }: ProjectCardProps)
 {
   return (
-    <div className="group relative rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+    <div className="group relative bg-glass rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col">
       {/* Image */}
       <div className="relative aspect-video overflow-hidden p-4">
         <img
@@ -31,9 +33,9 @@ export default function ProjectCard({
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+        <Heading as="h3" normalText={title} center={false} />
         {description && (
-          <p className="text-sm text-gray-600 mb-4 flex-1">{description}</p>
+          <p className="text-sm text-black-light mb-4 flex-1">{description}</p>
         )}
 
         {/* Technologies as small text chips */}
@@ -45,8 +47,8 @@ export default function ProjectCard({
               <span
                 key={index}
                 className={`text-xs font-medium px-2 py-1 rounded-md ${isHighlight
-                  ? "bg-purple-100 text-purple-700"
-                  : "bg-gray-100 text-gray-700"
+                  ? "bg-primary-light text-primary"
+                  : "bg-black-light/10 text-black-light"
                   }`}
                 title={tech}
               >

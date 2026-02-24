@@ -60,7 +60,7 @@ export default function HeroSection()
               <>
                 Turning <span className="text-primary"> Ideas Into </span> High-
                 <br />
-                Performing{" "}
+                Performing
                 <span className="text-primary"> Digital Products </span>
               </>
             }

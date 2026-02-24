@@ -5,8 +5,10 @@ import ServiceCard from "../ui/ServiceCard";
 import SubHeadingContainer, { SimplePara } from "../ui/SubHeadingContainer";
 import { Lightbulb } from "phosphor-react";
 
-const ServicesSection = () => {
-  const handleCardClick = (serviceId: number) => {
+const ServicesSection = () =>
+{
+  const handleCardClick = (serviceId: number) =>
+  {
     console.log("Clicked service:", serviceId);
     // Later: Open modal or navigate to case study page
   };
@@ -16,7 +18,6 @@ const ServicesSection = () => {
       <div className="max-w-5xl mx-auto">
         <div className="text-center my-6 md:mb-12">
           <SubHeadingContainer>
-            {" "}
             <div className="flex items-center gap-2 relative justify-center">
               <span className="inline-block py-1 px-2 rounded-full bg-white">
                 <Lightbulb weight="fill" className="w-4 h-4 text-yellow-500" />

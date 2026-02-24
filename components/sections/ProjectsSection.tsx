@@ -57,11 +57,9 @@ const ProjectsSection = () =>
             <button
               key={category}
               onClick={() => setSelectedFilter(category)}
-              className={`px-4 text-sm md:text-base py-2 rounded-full font-medium transition 
-                ${selectedFilter === category
-                  ? "bg-primary text-white"
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                }`}
+              className={`px-4 text-sm md:text-base py-2 rounded-full font-medium
+    ${selectedFilter === category ? "glass-btn-active text-white" : "glass-btn text-black-light"}
+  `}
             >
               {category}
             </button>
