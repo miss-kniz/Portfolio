@@ -11,6 +11,15 @@ interface ServiceCardProps
     onClick?: () => void;
 }
 
+export const Badge = ({ children }: { children: React.ReactNode }) =>
+{
+    return (
+        <span className="hidden md:inline-block mb-2 px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+            {children}
+        </span>
+    );
+};
+
 
 const ServiceCard = ({ id, title, description, imageUrl, onClick }: ServiceCardProps) =>
 {
@@ -32,9 +41,9 @@ const ServiceCard = ({ id, title, description, imageUrl, onClick }: ServiceCardP
             {/* Content */}
             <div className="p-1 pt-2">
                 {/* Badge */}
-                <span className="hidden md:inline-block mb-2 px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                <Badge>
                     #{id.toString().padStart(2, '0')}
-                </span>
+                </Badge>
 
                 {/* Title */}
                 <Heading
