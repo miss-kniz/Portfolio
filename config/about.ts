@@ -169,6 +169,3 @@ const aboutData: AboutData = {
 };
 
 export default aboutData;
-
-
-export type { AboutData }; 
