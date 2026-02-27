@@ -12,7 +12,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-primary-light md:py-4 px-2">
+    <section className="bg-primary-light md:py-4 px-2" id="services">
       <div className="max-w-7xl mx-auto">
         <div className="text-center my-3">
           <SubHeadingContainer>

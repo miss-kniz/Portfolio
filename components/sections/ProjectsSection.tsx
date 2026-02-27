@@ -49,10 +49,10 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section>
+    <section id="projects">
       <div className="max-w-7xl mx-auto md:py-4 px-2">
         {/* Header */}
-        <div className="text-center my-4">
+        <div className="text-center my-3">
           <SubHeadingContainer>
             <div className="flex items-center gap-2 relative justify-center">
               <span className="inline-block py-1 px-2 rounded-full bg-white">

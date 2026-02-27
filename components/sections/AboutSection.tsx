@@ -16,7 +16,10 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="bg-primary-light text-[13px] py-4 md:py-8 px-4 mt-2">
+    <section
+      className="bg-primary-light text-[13px] py-4 md:py-8 px-4 mt-2"
+      id="about"
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between  md:gap-8 items-center">
         {/* Left Content */}
         <div className="flex-1">
