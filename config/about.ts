@@ -47,6 +47,15 @@ export interface AboutData {
     interests: string[];
     hightlightedAboutRole: string[];
     aboutCTA: "View my Journey";
+
+    // Personal story config (optional for template users)
+    personalStory?: {
+      id: number; // for badge or ordering
+      title: string; // blog title
+      description: string; // short preview
+      imageUrl: string; // small image for card
+      link: string; // blog URL
+    };
   };
 
   // Experience Section (Career)
@@ -111,6 +120,14 @@ const aboutData: AboutData = {
       "Digital Problem Solver",
     ],
     aboutCTA: "View my Journey",
+    personalStory: {
+      id: 1,
+      title: "From Intermediate Student to First Tech Job",
+      description:
+        "A 4-minute read about resilience, loans, factory work, and breaking into tech.",
+      imageUrl: "/Mehak.png", // or any image you want
+      link: "https://medium.com/@mehak313naqvi/from-intermediate-student-to-first-tech-job-the-journey-which-still-hasnt-ended-e77a47b28748",
+    },
   },
 
   // ---------- Work Experience ----------

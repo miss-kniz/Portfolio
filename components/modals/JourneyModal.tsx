@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import aboutData from "@/config/about";
 import Button from "../ui/Button";
 import Heading from "../ui/Heading";
+import ServiceCard from "../ui/ServiceCard";
 
 const JourneyModal = ({
   isOpen,
@@ -65,6 +66,22 @@ const JourneyModal = ({
               ))}
             </ul>
           </div>
+          {aboutData.aboutMe.personalStory && (
+            <div className="mt-6">
+              <ServiceCard
+                title={aboutData.aboutMe.personalStory.title}
+                description={aboutData.aboutMe.personalStory.description}
+                imageUrl={aboutData.aboutMe.personalStory.imageUrl}
+                onClick={() =>
+                  window.open(
+                    aboutData.aboutMe.personalStory!.link,
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+              />
+            </div>
+          )}
         </div>
       </div>
     </Modal>
