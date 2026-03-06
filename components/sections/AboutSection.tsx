@@ -67,7 +67,7 @@ const AboutSection = () => {
             )}
 
             <div className="flex gap-2 mt-4 flex-wrap">
-              {aboutMe.hightlightedAboutRole.map((title, index) => (
+              {aboutMe.highlightedAboutRole.map((title, index) => (
                 <span
                   key={index}
                   className="text-xs font-medium px-2 py-1 rounded-md bg-black-light/10 text-primary"
@@ -76,14 +76,20 @@ const AboutSection = () => {
                 </span>
               ))}
             </div>
-            <Button onClick={() => setIsModalOpen(true)} className="mt-2">
+            <Button
+              onClick={() => {
+                console.log("Opening Journey Modal");
+                setIsModalOpen(true);
+              }}
+              className="mt-2"
+            >
               {aboutMe.aboutCTA}
             </Button>
           </div>
 
           <div className="flex-1 mt-6 md:mt-0 flex justify-center">
             <Image
-              src="/Mehak.png"
+              src={"/photo-gallery/my-picture.png"}
               alt={aboutData.name}
               width={400}
               height={400}

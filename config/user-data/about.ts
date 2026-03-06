@@ -45,7 +45,7 @@ export interface AboutData {
     paragraphs: string[];
     skills: string[];
     interests: string[];
-    hightlightedAboutRole: string[];
+    highlightedAboutRole: string[];
     aboutCTA: "View my Journey";
 
     // Personal story config (optional for template users)
@@ -111,7 +111,7 @@ const aboutData: AboutData = {
     ],
     skills: ["React", "TypeScript", "TailwindCSS", "Node.js", "Next.js"],
     interests: ["Open Source", "Tech Writing", "UI/UX Design"],
-    hightlightedAboutRole: [
+    highlightedAboutRole: [
       "Full-Stack Ninja",
       "Scalable Web Solutions Expert",
       "React & Next.js Pro",
@@ -120,12 +120,13 @@ const aboutData: AboutData = {
       "Digital Problem Solver",
     ],
     aboutCTA: "View my Journey",
+
     personalStory: {
       id: 1,
       title: "From Intermediate Student to First Tech Job",
       description:
         "A 4-minute read about resilience, loans, factory work, and breaking into tech.",
-      imageUrl: "/Mehak.png", // or any image you want
+      imageUrl: "/photo-gallery/journey.png", // or any image you want
       link: "https://medium.com/@mehak313naqvi/from-intermediate-student-to-first-tech-job-the-journey-which-still-hasnt-ended-e77a47b28748",
     },
   },
@@ -160,7 +161,7 @@ const aboutData: AboutData = {
     {
       degree: "BSCS",
       institution: "Virtual University",
-      description: "Software enginring and computer architectures.",
+      description: "Software engineering and computer architectures.",
       period: "2023 - 2027", // Optional
     },
   ],
@@ -168,7 +169,7 @@ const aboutData: AboutData = {
   // ---------- Personal Interests/Hobbies ----------
   hobbies: [
     "Sketching",
-    "UX reserch",
+    "UX research",
     "Experimenting with new AI Tools",
     "Learning new tech",
   ],
@@ -191,12 +192,12 @@ const aboutData: AboutData = {
     {
       platform: "Twitter",
       icon: "ri-twitter-x-fill",
-      username: "@yourusername",
+      username: "@yourUsername",
     },
     {
       platform: "Instagram",
       icon: "ri-instagram-fill",
-      username: "@yourusername",
+      username: "@yourUsername",
     },
   ],
 

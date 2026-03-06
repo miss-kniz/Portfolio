@@ -70,6 +70,9 @@ const JourneyModal = ({
                     "noopener,noreferrer",
                   )
                 }
+                className="flex-row"
+                imageWidth="w-1/2"
+                showDescriptionInMobile={true}
               />
             </div>
           )}
