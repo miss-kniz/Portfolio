@@ -106,8 +106,8 @@ const aboutData: AboutData = {
       highlightedText: "to strong {Developer}",
     },
     paragraphs: [
-      "I'm a Mehak a developer with 2+ years of experience in web development. I love creating elegant solutions to complex problems. { Problem solving lover }",
-      "When I'm not coding, you can find me hiking and photography. I believe in continuous learning and sharing knowledge with the community.",
+      "I'm Mehak, a Frontend Engineer who genuinely enjoys the puzzle of building things that work beautifully. Two years in, and I still get excited when a performance fix shreds load time or a UI finally clicks into place.",
+      "When I'm not coding, you'll find me watching K-dramas, exploring nature, or doing what I love most, sitting on the rooftop at evening with a cup of milk tea, watching the world slow down. That quiet is where my best ideas come from.",
     ],
     skills: ["React", "TypeScript", "TailwindCSS", "Node.js", "Next.js"],
     interests: ["Open Source", "Tech Writing", "UI/UX Design"],
@@ -134,25 +134,39 @@ const aboutData: AboutData = {
   // ---------- Work Experience ----------
   experience: [
     {
-      role: "Full-stack Developer – Freelance / Remote",
-      company: "LinkedIn", // Can be company name or "Freelance"
+      role: "Full Stack Developer",
+      company: "ThinkBuilt Solutions",
       description:
-        "Built and optimized multiple web products for startups and small businesses",
-      period: "Jan, 2026 - Present", // Optional: add if you want
-    },
-    {
-      role: "Full-stack Developer",
-      company: "ThinkBuild Solution",
-      description:
-        "Worked on high performing, rich featured SaaS applications using React/Next, TailwindCSS, Node, Express, Prisma an Postgres",
-      period: "August, 2024 - Present",
+        "Building scalable SaaS platforms using Next.js, TypeScript, Node.js, Prisma, and PostgreSQL with real time features and optimized dashboards.",
+      period: "Aug 2025 - Present",
     },
     {
       role: "Frontend Developer",
-      company: "ThinkBuild Solution",
+      company: "ThinkBuilt Solutions",
       description:
-        "Worked on responsive web applications using React and TailwindCSS",
-      period: "March, 2024 - August, 2024",
+        "Developed modular frontend architecture and optimized state driven features using React and RTK Query.",
+      period: "Mar 2025 - Aug 2025",
+    },
+    {
+      role: "Frontend Developer",
+      company: "Prep Plate (SaaS Product)",
+      description:
+        "Built responsive meal planning SaaS interfaces using React and modern state management.",
+      period: "Dec 2024 - Mar 2025",
+    },
+    {
+      role: "JavaScript Instructor",
+      company: "Self Employed",
+      description:
+        "Taught core JavaScript concepts and guided students in building practical projects.",
+      period: "Jan 2025 - Mar 2025",
+    },
+    {
+      role: "Frontend Intern",
+      company: "CodeAlpha",
+      description:
+        "Improved UI responsiveness and usability across multiple client projects.",
+      period: "Oct 2024 - Nov 2024",
     },
   ],
 
@@ -204,7 +218,7 @@ const aboutData: AboutData = {
   // ---------- Contact Information ----------
   contact: {
     email: "mehak313naqvi@gmail.com",
-    location: "Faisalabad, PK",
+    location: "Remote — UK Hours",
     preferredMethod: "linkedin", // Options: 'email' | 'phone' | 'linkedin' | 'whatsapp'
   },
 };

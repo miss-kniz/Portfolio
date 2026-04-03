@@ -4,17 +4,28 @@ import Heading from "./Heading";
 import aboutData from "@/config/user-data/about";
 import SocialLinks from "./SocialLinks";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  portfolioForJob?: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ portfolioForJob }) => {
   const currentYear = new Date().getFullYear();
   const firstName = aboutData.name.split(" ")[0];
-
-  const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#projects", label: "Projects" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
+  const navItems = [
+    "Home",
+    "About",
+    "Projects",
+    portfolioForJob ? "Skills" : "Services",
   ];
+
+  // ScrollTo function
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id.toLowerCase());
+    if (!el) return;
+    const yOffset = -80; // adjust for navbar height
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
 
   return (
     <footer className="w-full bg-primary-light">
@@ -24,18 +35,18 @@ const Footer: React.FC = () => {
 
         {/* Navigation */}
         <nav className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm tracking-wide text-gray-600 font-medium">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+          {navItems.map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item)}
               className="hover:text-primary transition-colors"
             >
-              {link.label}
-            </a>
+              {item}
+            </button>
           ))}
         </nav>
 
-        {/* Social Icons - Now using data from about.ts */}
+        {/* Social Icons */}
         <div className="flex flex-wrap justify-center gap-4">
           <SocialLinks links={aboutData.socialLinks} />
         </div>
@@ -43,7 +54,7 @@ const Footer: React.FC = () => {
         {/* Divider */}
         <div className="w-full border-t border-gray-200"></div>
 
-        {/* Copyright - Now includes name from config */}
+        {/* Copyright */}
         <p className="text-xs text-gray-500 text-center">
           © {currentYear} {aboutData.name}. All rights reserved.
         </p>

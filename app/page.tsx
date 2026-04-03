@@ -31,8 +31,6 @@ export default function HomePage() {
 
       <HeroSection ref={homeRef} portfolioForJob={portfolioForJob} />
 
-      <InfiniteScrollProjects />
-
       <AboutSection ref={aboutRef} />
 
       <ProjectsSection ref={projectsRef} />
@@ -45,7 +43,7 @@ export default function HomePage() {
 
       <ContactSection />
 
-      <Footer />
+      <Footer portfolioForJob={portfolioForJob} />
     </div>
   );
 }

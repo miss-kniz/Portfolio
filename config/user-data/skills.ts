@@ -203,7 +203,7 @@ export const CATEGORIES: Record<
     sub: "Git · TS · Python · C++",
   },
   language: {
-    icon: PythonIcon,
+    icon: CppIcon,
     label: "Languages",
     sub: "Python · JavaScript · C++",
   },

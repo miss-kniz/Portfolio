@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, Ref, forwardRef } from "react";
+import { useState, useRef, Ref, forwardRef, useEffect } from "react";
 import { ArrowRight, Lightning, Atom, Database } from "phosphor-react";
 import {
   CATEGORIES,
@@ -24,6 +24,14 @@ const SkillsSection = forwardRef<HTMLElement, {}>(
     const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
     const [centerSkill, setCenterSkill] = useState<Skill | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+      setMounted(true);
+    }, []);
+
+    if (!mounted) return null; // skip rendering on server
 
     const filtered =
       activeCategory === "all"

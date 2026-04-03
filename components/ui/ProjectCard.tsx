@@ -21,7 +21,7 @@ const highlightTechs = [
   TECH_STACK.express,
   TECH_STACK.typescript,
   TECH_STACK["express js"],
-  "ui design",
+  "UI design",
 ];
 
 export default function ProjectCard({
