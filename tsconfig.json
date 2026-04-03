@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "config/user-data/skills-icons/pgadmin.jsx"  ],
   "exclude": ["node_modules"]
 }

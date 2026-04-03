@@ -106,7 +106,7 @@ const aboutData: AboutData = {
       highlightedText: "to strong {Developer}",
     },
     paragraphs: [
-      "I'm a Mehak a developer with 3 years of experience in web development. I love creating elegant solutions to complex problems. { Problem solving lover }",
+      "I'm a Mehak a developer with 2+ years of experience in web development. I love creating elegant solutions to complex problems. { Problem solving lover }",
       "When I'm not coding, you can find me hiking and photography. I believe in continuous learning and sharing knowledge with the community.",
     ],
     skills: ["React", "TypeScript", "TailwindCSS", "Node.js", "Next.js"],
@@ -179,7 +179,7 @@ const aboutData: AboutData = {
   socialLinks: [
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com/in/mehak-fatima-naqvi",
+      url: "https://linkedin.com/in/miss-kniz",
       icon: "ri-linkedin-fill",
       username: "@mehak-fatima-naqvi",
     },

@@ -27,7 +27,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-primary font-semibold text-white hover:bg-primary-dark shadow-md",
       outline:
         "border border-primary font-semibold text-primary bg-transparent hover:bg-primary-light",
-      ghost: "text-primary bg-primary-light hover:bg-primary/80",
+      ghost:
+        "text-primary border-primary border bg-primary-light hover:bg-primary/30",
       secondary:
         "border border-black-light font-semibold bg-transparent hover:bg-primary-light",
     };

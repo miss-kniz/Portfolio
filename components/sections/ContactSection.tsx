@@ -19,7 +19,7 @@ const ContactSection: React.FC = () => {
         <div className="grid lg:gap-10 gap-4 md:grid-cols-2 items-start">
           {/* LEFT */}
           <div className="space-y-8">
-            <Heading as="h2" center={false} normalText="Contact Us" />
+            <Heading as="h2" center={false} normalText="Contact" />
 
             <div className="space-y-6">
               {/* Address */}
@@ -52,7 +52,7 @@ const ContactSection: React.FC = () => {
                   <Envelope size={18} weight="regular" />
                 </div>
                 <div>
-                  <p className="font-semibold">Email Us</p>
+                  <p className="font-semibold">Email</p>
                   <p className="text-sm text-black-light break-all">
                     {contact.email}
                   </p>
@@ -62,7 +62,7 @@ const ContactSection: React.FC = () => {
 
             {/* Social - Using Button component */}
             <div className="pt-6 border-t border-black/10 dark:border-white/10">
-              <p className="mb-4 font-medium">Follow Us :</p>
+              <p className="mb-4 font-medium">Follow Me :</p>
               <div className="flex gap-4">
                 <SocialLinks
                   links={aboutData.socialLinks}
@@ -75,7 +75,7 @@ const ContactSection: React.FC = () => {
 
           {/* RIGHT FORM (unchanged) */}
           <div className="bg-primary-light p-6 rounded-2xl">
-            <h3 className="text-lg font-semibold mb-6">Leave Us Your Info.</h3>
+            <h3 className="text-lg font-semibold mb-6">Leave Your Info.</h3>
 
             <form className="space-y-4">
               <Input type="text" placeholder="Your Name" />
@@ -83,18 +83,6 @@ const ContactSection: React.FC = () => {
               <Input type="email" placeholder="Email Address" />
 
               <Textarea rows={4} placeholder="Message" />
-
-              {/* Checkbox */}
-              <label className="flex items-start gap-2 text-xs text-black-light">
-                <input type="checkbox" className="mt-1" />
-                <span>
-                  You agree to our{" "}
-                  <span className="text-primary font-medium">
-                    privacy policy
-                  </span>
-                  .
-                </span>
-              </label>
 
               {/* Button */}
               <Button>Send Message</Button>

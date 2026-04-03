@@ -1,7 +1,7 @@
+import { TECH_STACK } from "@/config/user-data/projects";
 import Heading from "./Heading";
 
-interface ProjectCardProps
-{
+interface ProjectCardProps {
   title: string;
   description?: string;
   imageUrl: string;
@@ -10,7 +10,19 @@ interface ProjectCardProps
 }
 
 // Highlight important techs
-const highlightTechs = ["react", "prisma", "redux toolkit", "rtk query", "nodejs", "postgresql"];
+const highlightTechs = [
+  TECH_STACK.react,
+  TECH_STACK.prisma,
+  TECH_STACK["next.js"],
+  TECH_STACK["redux toolkit"],
+  TECH_STACK["rtk query"],
+  TECH_STACK.nodejs,
+  TECH_STACK.postgresql,
+  TECH_STACK.express,
+  TECH_STACK.typescript,
+  TECH_STACK["express js"],
+  "ui design",
+];
 
 export default function ProjectCard({
   title,
@@ -18,8 +30,7 @@ export default function ProjectCard({
   imageUrl,
   technologies,
   liveUrl,
-}: ProjectCardProps)
-{
+}: ProjectCardProps) {
   return (
     <div className="group relative bg-glass rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col">
       {/* Image */}
@@ -40,16 +51,16 @@ export default function ProjectCard({
 
         {/* Technologies as small text chips */}
         <div className="flex gap-2 mb-4 flex-wrap">
-          {technologies.map((tech, index) =>
-          {
-            const isHighlight = highlightTechs.includes(tech.toLowerCase());
+          {technologies.map((tech, index) => {
+            const isHighlight = highlightTechs.includes(tech);
             return (
               <span
                 key={index}
-                className={`text-xs font-medium px-2 py-1 rounded-md ${isHighlight
-                  ? "bg-primary-light text-primary"
-                  : "bg-black-light/10 text-black-light"
-                  }`}
+                className={`text-xs font-medium px-2 py-1 rounded-md ${
+                  isHighlight
+                    ? "bg-primary-light text-primary"
+                    : "bg-black-light/10 text-black-light"
+                }`}
                 title={tech}
               >
                 {tech}
@@ -57,7 +68,6 @@ export default function ProjectCard({
             );
           })}
         </div>
-
       </div>
     </div>
   );
