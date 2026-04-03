@@ -16,7 +16,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
     )?.url;
     return (
       <>
-        <section className="relative pt-16" id="home" ref={ref}>
+        <section className="relative pt-20 md:pt-16" id="home" ref={ref}>
           {/* Left Curtain */}
           <div className="absolute left-0 md:-top-65 lg:-top-50 -top-80 w-1/3 h-dvh opacity-30 md:opacity-50">
             <Image
@@ -82,6 +82,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
               {/* Main Headline */}
               <Heading
                 as="h1"
+                className="my-4"
                 normalText={
                   <>
                     Turning <span className="text-primary"> Ideas Into </span>{" "}
@@ -101,7 +102,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col md:flex-row justify-center gap-4">
+              <div className="flex justify-center gap-4">
                 <a
                   href="https://calendar.app.google/fpRU2qDXNfbg4BSK8"
                   target="_blank"
@@ -116,7 +117,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="secondary"> Connect on LinkedIn </Button>
+                  <Button variant="secondary">Connect on LinkedIn </Button>
                 </a>
               </div>
 

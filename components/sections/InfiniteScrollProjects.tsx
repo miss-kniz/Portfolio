@@ -9,9 +9,9 @@ const InfiniteScrollProjects = () => {
             {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((id, index) => (
               <div
                 key={index}
-                className="group relative w-[220px] md:min-w-[390px] shrink-0 overflow-hidden rounded-xl border border-gray-500 bg-white shadow-sm"
+                className="group relative w-[280px] md:min-w-[390px] shrink-0 overflow-hidden rounded-xl border border-gray-500 bg-white shadow-sm"
               >
-                <div className="relative h-[100px] md:h-[180px] w-full bg-gray-100">
+                <div className="relative h-[130px] md:h-[180px] w-full bg-gray-100">
                   <Image
                     src={`/projects/${id}.webp`}
                     alt={`Project ${id}`}

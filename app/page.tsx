@@ -1,4 +1,5 @@
 "use client";
+import BottomNav from "@/components/BottomNav";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/sections/AboutSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -10,8 +11,9 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import Footer from "@/components/ui/Footer";
 import { useRef } from "react";
 
+export const portfolioForJob = true; // can be for freelancing the service section and others will work
+
 export default function HomePage() {
-  const portfolioForJob = true; // can be for freelancing the service section and others will work
   const homeRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
@@ -44,6 +46,15 @@ export default function HomePage() {
       <ContactSection />
 
       <Footer portfolioForJob={portfolioForJob} />
+      <BottomNav
+        sectionRefs={{
+          Home: homeRef,
+          About: aboutRef,
+          Projects: projectsRef,
+          Skills: skillsRef,
+        }}
+        portfolioForJob={portfolioForJob}
+      />
     </div>
   );
 }
