@@ -51,9 +51,8 @@ export default function BottomNav({
   return (
     <header className="fixed z-50 bg-background/30 backdrop-blur-sm w-full border-gray-100 shadow-sm md:hidden -bottom-1 left-0 right-0  border-t py-2">
       <div className="container mx-auto  px-4 py-3 flex justify-between items-center max-w-7xl">
-        {/* bottom nav mobile only */}
-        <nav className="">
-          <div className="space-x-4 flex justify-around">
+        <nav className="w-full">
+          <div className="space-x-4 flex items-center justify-center">
             {navItems.map((item) => (
               <button
                 key={item}
