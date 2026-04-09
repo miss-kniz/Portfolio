@@ -82,13 +82,11 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
               {/* Main Headline */}
               <Heading
                 as="h1"
-                className="my-4"
+                className="my-4 max-w-5xl"
                 normalText={
                   <>
                     Turning <span className="text-primary"> Ideas Into </span>{" "}
-                    High-
-                    <br />
-                    Performing
+                    High Performing
                     <span className="text-primary"> Digital Products </span>
                   </>
                 }
