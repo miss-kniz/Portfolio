@@ -29,14 +29,18 @@ export interface AboutData {
   // Personal Info
   name: string;
   title: string;
-
+  showCurtain: boolean; // Show decorative curtains in Hero section
+  topText?: string; // Optional: small text above name/title in Hero section
+  highlightsFromTopText: string[]; // Words from topText to highlight (optional)
   // Hero Section
   hero: {
-    greeting: string;
     headline: string;
-    shortBio: string;
-    ctaText: string;
-    ctaLink: string;
+    highlightedWords?: string[]; // Optional: words in headline to highlight
+    primaryCtaText: string;
+    primaryCtaLink: string;
+    secondaryCtaText: string;
+    secondaryCtaLink: string;
+    heroPara: string;
   };
 
   // About Me Section
@@ -88,15 +92,21 @@ const aboutData: AboutData = {
   // ---------- Basic Info ----------
   name: "Mehak Fatima Naqvi",
   title: "Full Stack Developer",
+  showCurtain: true, // Set to false to hide decorative curtains in Hero section
+
+  topText: "Available for opportunities",
+  highlightsFromTopText: ["opportunities"],
 
   // ---------- Hero Section ----------
   hero: {
-    greeting: "Hi, I'm",
-    headline: "Building digital experiences that matter",
-    shortBio:
-      "A passionate developer creating amazing web applications with React and modern technologies.",
-    ctaText: "View My Work",
-    ctaLink: "#projects",
+    headline: "Turning Ideas Into High Performing Digital Products",
+    highlightedWords: ["Ideas Into", "Digital Products"], // Optional: words in headline to highlight
+    primaryCtaText: "Book a Call",
+    primaryCtaLink: "https://calendar.app.google/fpRU2qDXNfbg4BSK8",
+    secondaryCtaText: "Connect on LinkedIn",
+    secondaryCtaLink: "https://www.linkedin.com/in/miss-kniz/",
+    heroPara:
+      "React & Next.js Developer | I Help Startups Ship Fast, Scalable & High-Converting Web Apps",
   },
 
   // ---------- About Me Section ----------
