@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Mehak Fatima Naqvi | Full-Stack PERN Developer (miss-kniz)",
   description:
     "Mehak Fatima Naqvi (miss-kniz) is a React & Next.js developer based in Faisalabad, Pakistan, specializing in the PERN stack and building scalable web apps for startups.",
+  verification: {
+    google: "8cGWQBP5rucbnE3RCQoMp_D6RxaVKbrSaVhm18o_oxE",
+  },
   keywords: [
     "Mehak Fatima Naqvi",
     "miss-kniz",
