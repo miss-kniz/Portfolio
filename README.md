@@ -40,3 +40,8 @@
   - Copyright information.
   - Social links.
   - Navigation links.
+
+## Planning for Future Customization
+
+- **Theme Control**  
+  Users may want to enable or disable dark/light theme adaptation. Will add that permission in future as well.
