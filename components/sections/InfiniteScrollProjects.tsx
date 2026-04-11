@@ -1,8 +1,15 @@
 import Image from "next/image";
+import { Info } from "phosphor-react";
 
 const InfiniteScrollProjects = () => {
   return (
-    <section className="py-4 overflow-hidden">
+    <section className=" overflow-hidden">
+      <div className="flex justify-center my-4 items-center gap-3 text-gray-500 text-sm">
+        <Info size={20} />
+        <span>
+          Some <span className="font-bold">Project</span> Highlights Are Below
+        </span>
+      </div>
       <div className="container mx-auto px-4">
         <div className="relative w-full">
           <div className="flex w-max gap-6 animate-infinite-scroll hover:[animation-play-state:paused]">

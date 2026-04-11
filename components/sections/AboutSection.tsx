@@ -22,7 +22,7 @@ const AboutSection = forwardRef<HTMLElement, {}>(
       return (
         <SimplePara
           key={index}
-          className={`mt-${index === 0 ? "4" : "2"} font-light md:text-sm`}
+          className={`mt-${index === 0 ? "2" : "1"} font-light`}
         >
           {parts.map((part, idx) => {
             if (part.startsWith("{") && part.endsWith("}")) {
@@ -80,7 +80,6 @@ const AboutSection = forwardRef<HTMLElement, {}>(
               </div>
               <Button
                 onClick={() => {
-                  console.log("Opening Journey Modal");
                   setIsModalOpen(true);
                 }}
                 className="mt-2"

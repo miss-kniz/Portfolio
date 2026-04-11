@@ -43,7 +43,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
             </>
           )}
 
-          <div className="container mx-auto px-2 relative z-10">
+          <div className="container mx-auto px-2 relative z-10 my-4 md:my-8">
             <div className="flex flex-col items-center max-w-7xl mx-auto text-center space-y-6 md:space-y-8">
               {/* Trust Badge */}
               <SubHeadingContainer>
@@ -123,16 +123,6 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
                     <Button variant="secondary">{hero.secondaryCtaText}</Button>
                   </a>
                 )}
-              </div>
-
-              {/* Section Divider */}
-              <div className="flex items-center gap-3 text-gray-500 text-sm">
-                <Info size={20} />
-
-                <span>
-                  Some <span className="font-bold">Project</span> Highlights Are
-                  Below
-                </span>
               </div>
             </div>
           </div>

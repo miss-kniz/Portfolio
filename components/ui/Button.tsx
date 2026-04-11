@@ -34,8 +34,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizeClasses = {
-      sm: "h-9 px-3 text-xs",
-      default: "h-11 px-6 text-md md:text-lg",
+      sm: "h-9 px-3 text-sm",
+      default: "h-11 px-6 text-base md:text-lg",
       lg: "h-12 px-8 text-base",
       icon: "w-10 h-10 p-2 rounded-full",
     };
