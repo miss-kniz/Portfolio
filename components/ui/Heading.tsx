@@ -20,7 +20,7 @@ const Heading = ({
   const Tag = as;
 
   const sizeStyles = {
-    h1: "text-[1.7rem]  font-bold md:text-5xl lg:text-7xl",
+    h1: "text-5xl  font-bold md:text-5xl lg:text-8xl",
     h2: "text-2xl  font-bold md:text-4xl lg:text-5xl",
     h3: "text-xl  font-bold md:text-3xl lg:text-4xl",
     h4: "text-[14px] font-medium",

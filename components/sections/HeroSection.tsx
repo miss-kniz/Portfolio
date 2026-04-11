@@ -8,7 +8,7 @@ import Heading from "../ui/Heading";
 import aboutData from "@/config/user-data/about";
 import { forwardRef, Ref } from "react";
 import InfiniteScrollProjects from "./InfiniteScrollProjects";
-import { highlightText } from "@/helpers/text-helper";
+import { formatText, highlightText } from "@/helpers/text-helper";
 
 const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
   ({ portfolioForJob }, ref: Ref<HTMLElement>) => {
@@ -43,19 +43,21 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
             </>
           )}
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-2 relative z-10">
             <div className="flex flex-col items-center max-w-7xl mx-auto text-center space-y-6 md:space-y-8">
               {/* Trust Badge */}
               <SubHeadingContainer>
                 {portfolioForJob && topText ? (
                   // Portfolio is open for work
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-center gap-2">
                     <span className="p-1 bg-green-500 rounded-full"></span>
-                    {highlightText(
-                      topText,
-                      "text-green-500",
-                      highlightsFromTopText,
-                    )}
+                    <p className="tracking-wider">
+                      {highlightText(
+                        topText,
+                        "text-green-500",
+                        highlightsFromTopText,
+                      )}
+                    </p>
                   </div>
                 ) : (
                   <div className="flex flex-col items-center gap-2 relative justify-center">
@@ -83,7 +85,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
               {/* Main Headline */}
               <Heading
                 as="h1"
-                className="my-4 max-w-5xl"
+                className="my-4 max-w-7xl leading-none!"
                 normalText={
                   <>
                     {highlightText(
@@ -97,7 +99,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
 
               {/* Subheading */}
               <p className="md:text-xl text-black-light max-w-3xl">
-                {hero.heroPara}
+                {formatText(hero.heroPara)}
               </p>
 
               {/* CTA Buttons */}

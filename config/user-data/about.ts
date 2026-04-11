@@ -94,7 +94,7 @@ const aboutData: AboutData = {
   title: "Full Stack Developer",
   showCurtain: true, // Set to false to hide decorative curtains in Hero section
 
-  topText: "Available for opportunities",
+  topText: "Available for OPPORTUNITIES",
   highlightsFromTopText: ["opportunities"],
 
   // ---------- Hero Section ----------
@@ -106,7 +106,7 @@ const aboutData: AboutData = {
     secondaryCtaText: "Connect on LinkedIn",
     secondaryCtaLink: "https://www.linkedin.com/in/miss-kniz/",
     heroPara:
-      "React & Next.js Developer | I Help Startups Ship Fast, Scalable & High-Converting Web Apps",
+      "I Help Startups and freelance teams Ship Fast, Scalable & High-Converting Web Apps", // can include escape char \n for line breaks if needed
   },
 
   // ---------- About Me Section ----------

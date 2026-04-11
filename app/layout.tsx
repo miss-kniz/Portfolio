@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     "Top Next.js developer",
     "PERN Stack Developer Pakistan",
     "Web Architecture Expert",
+    "Frontend Engineer",
+    "Scalable Frontend Architect",
   ],
   alternates: {
     canonical: "https://mehak-naqvi.vercel.app",
