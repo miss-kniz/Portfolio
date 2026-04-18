@@ -15,6 +15,12 @@ export default async function ProjectPage({
   const projectIndex = projects.findIndex((p) => p.id === String(id));
   const project = projects[projectIndex];
   const caseStudy = project?.caseStudy;
+  const label = project.liveUrl
+    ? "Visit website"
+    : project.githubUrl
+      ? "View code"
+      : "Visit website";
+
   const prevProject = projectIndex > 0 ? projects[projectIndex - 1] : null;
   const nextProject =
     projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
@@ -85,13 +91,18 @@ export default async function ProjectPage({
                 {caseStudy?.introduction}
               </SimplePara>
               <div className="mx-auto text-center">
-                <Button variant="secondary" className="my-4 md:mb-8">
+                <Button
+                  variant="secondary"
+                  className="my-4 md:mb-8"
+                  disabled={!(project.liveUrl || project.githubUrl)}
+                >
                   <a
-                    href={project.liveUrl}
+                    href={project.liveUrl || project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Visit website <i className="ri-arrow-right-up-line" />
+                    {label}
+                    <i className="ri-arrow-right-up-line" />
                   </a>
                 </Button>
               </div>
@@ -242,7 +253,7 @@ export default async function ProjectPage({
                   key={i}
                   className="border border-border rounded-xl p-5 flex gap-4 items-start"
                 >
-                  <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary text-sm font-bold">
+                  <span className="shrink-0 w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary text-sm font-bold">
                     {i + 1}
                   </span>
                   <div>
@@ -260,7 +271,7 @@ export default async function ProjectPage({
               <img
                 src={caseStudy.featuresImage}
                 alt="Features screenshot"
-                className="w-full rounded-xl object-cover mt-8"
+                className="w-full rounded-xl drop-shadow-md object-cover mt-8"
               />
             )}
           </div>
