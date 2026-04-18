@@ -10,19 +10,19 @@ interface Architecture {
 
 export interface CaseStudy {
   bgImageUrl?: string;
-  introduction: string;
-  overview: string;
+  introduction?: string;
+  overview?: string;
   overviewImage?: string;
-  architecture: Architecture;
-  challenges: CaseStudySection[];
-  process: CaseStudySection[];
-  features: CaseStudySection[];
+  architecture?: Architecture;
+  challenges?: CaseStudySection[];
+  process?: CaseStudySection[];
+  features?: CaseStudySection[];
   featuresImage?: string;
-  outcomes: {
+  outcomes?: {
     value: string;
     desc: string;
   }[];
-  reflection: string;
+  reflection?: string;
 }
 
 export const cherishedLivesCaseStudy: CaseStudy = {
