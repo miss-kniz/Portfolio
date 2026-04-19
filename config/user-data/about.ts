@@ -8,7 +8,11 @@ export interface SocialLink {
   platform: string;
   url?: string;
   icon: string;
-  username: string;
+}
+
+export interface HobbiesItem {
+  label: string;
+  link?: string;
 }
 
 export interface ExperienceItem {
@@ -69,7 +73,8 @@ export interface AboutData {
   education?: EducationItem[]; // Optional: can be omitted
 
   // Personal
-  hobbies: string[];
+
+  hobbies: HobbiesItem[];
 
   // Social Links
   socialLinks: SocialLink[];
@@ -83,8 +88,13 @@ export interface AboutData {
   };
 }
 
-// ========================================
-// YOUR PORTFOLIO DATA
+export const socialLinks = {
+  linkedin: "https://www.linkedin.com/in/miss-kniz",
+  instagram: "https://www.instagram.com/miss-kniz",
+  github: "https://www.github.com/miss_kniz",
+};
+
+// PORTFOLIO DATA
 // ========================================
 // 👇 Edit everything below this line 👇
 
@@ -144,42 +154,25 @@ const aboutData: AboutData = {
   // ---------- Work Experience ----------
   experience: [
     {
-      role: "Full Stack Developer",
-      company: "ThinkBuilt Solutions",
-      description:
-        "Building scalable SaaS platforms using Next.js, TypeScript, Node.js, Prisma, and PostgreSQL with real time features and optimized dashboards.",
-      period: "Aug 2025 - Present",
+      role: "Frontend-Focused Full-Stack Developer",
+      company: "ThinkBuilt Solutions - Remote",
+      description: "Next.js, TypeScript, Node.js, Prisma, PostgreSQL",
+      period: "Mar 2025 - Present",
     },
     {
       role: "Frontend Developer",
-      company: "ThinkBuilt Solutions",
+      company: "Prep Plate (SaaS Product) - Contract",
       description:
-        "Developed modular frontend architecture and optimized state driven features using React and RTK Query.",
-      period: "Mar 2025 - Aug 2025",
-    },
-    {
-      role: "Frontend Developer",
-      company: "Prep Plate (SaaS Product)",
-      description:
-        "Built responsive meal planning SaaS interfaces using React and modern state management.",
+        "Built responsive meal planning UI using React and Redux Toolkit.",
       period: "Dec 2024 - Mar 2025",
     },
     {
-      role: "JavaScript Instructor",
-      company: "Self Employed",
-      description:
-        "Taught core JavaScript concepts and guided students in building practical projects.",
-      period: "Jan 2025 - Mar 2025",
-    },
-    {
       role: "Frontend Intern",
-      company: "CodeAlpha",
-      description:
-        "Improved UI responsiveness and usability across multiple client projects.",
+      company: "CodeAlpha - Remote",
+      description: "UI responsiveness & usability fixes",
       period: "Oct 2024 - Nov 2024",
     },
   ],
-
   // ---------- Education ----------
   education: [
     {
@@ -192,10 +185,11 @@ const aboutData: AboutData = {
 
   // ---------- Personal Interests/Hobbies ----------
   hobbies: [
-    "Sketching",
-    "UX research",
-    "Experimenting with new AI Tools",
-    "Learning new tech",
+    { label: "Sketching", link: "" },
+    { label: "UX research", link: "" },
+    { label: "Experimenting with AI tools", link: "" },
+    { label: "Learning new tech", link: "" },
+    { label: "Scrolling LinkedIn", link: "https://www.linkedin.com/miss-kniz" },
   ],
 
   // ---------- Social Media Links ----------
@@ -203,25 +197,22 @@ const aboutData: AboutData = {
   socialLinks: [
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com/in/miss-kniz",
+      url: socialLinks["linkedin"],
       icon: "ri-linkedin-fill",
-      username: "@mehak-fatima-naqvi",
     },
     {
       platform: "GitHub",
-      url: "https://github.com/miss-kniz",
+      url: socialLinks["github"],
       icon: "ri-github-fill",
-      username: "@miss-kniz",
     },
     {
       platform: "Twitter",
       icon: "ri-twitter-x-fill",
-      username: "@yourUsername",
     },
     {
       platform: "Instagram",
+      // url: socialLinks["instagram"],
       icon: "ri-instagram-fill",
-      username: "@yourUsername",
     },
   ],
 

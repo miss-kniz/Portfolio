@@ -21,7 +21,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const baseClasses =
-      "inline-flex items-center justify-center whitespace-nowrap rounded-full transition-colors text-center tracking-wide";
+      "inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-full transition-colors text-center tracking-wide";
 
     const variantClasses = {
       primary:
@@ -29,9 +29,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       outline:
         "border border-primary font-semibold text-primary bg-transparent hover:bg-primary-light",
       ghost:
-        "text-primary border-primary border bg-primary-light hover:bg-primary/30",
+        "border border-primary/40 font-serif bg-primary/10 hover:bg-primary/20 hover:border-primary/70 transition-all duration-200",
       secondary:
-        "border border-black-light font-semibold bg-transparent hover:bg-primary-light",
+        "border border-black-light backdrop-blur-sm font-semibold bg-transparent hover:bg-primary-light",
     };
 
     const sizeClasses = {

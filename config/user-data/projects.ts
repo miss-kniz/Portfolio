@@ -1,13 +1,18 @@
+import { amazonCaseStudy } from "./case-study/amazon-clone";
 import {
   CaseStudy,
   cherishedLivesCaseStudy,
 } from "./case-study/cherished-lives";
+import { leadlyftCaseStudy } from "./case-study/leadlyft";
+import { likhSpireCaseStudy } from "./case-study/likhSpire";
+import { movieLandCaseStudy } from "./case-study/movie-app";
+import { prepAndPlateCaseStudy } from "./case-study/prep&plate";
 
 export interface ProjectItem {
-  id: number;
+  id: string;
   title: string;
   description: string;
-  categories: string[]; // instead of single serviceType
+  categories: string[];
   imageUrl: string;
   technologies: string[];
   liveUrl?: string;
@@ -47,7 +52,7 @@ export const TECH_STACK = {
 
 export const projects: ProjectItem[] = [
   {
-    id: 1,
+    id: "leadlyft",
     title: "LeadLyft",
     categories: ["Full-stack", "SaaS"],
     imageUrl: "projects/3.webp",
@@ -67,10 +72,14 @@ export const projects: ProjectItem[] = [
     githubUrl: undefined,
     isClientProject: true,
     description:
-      "- A coaching platform for executives to improve work and life performance.",
+      "A coaching platform for executives to improve work and life performance.",
+    role: "Frontend-focused full-stack Developer",
+    context: "Website development",
+    period: "Early 2025",
+    caseStudy: leadlyftCaseStudy,
   },
   {
-    id: 2,
+    id: "cherished-lives",
     title: "Cherished Lives",
     categories: ["Frontend", "Figma to Code"],
     imageUrl: "projects/cherished-lives.png",
@@ -94,37 +103,25 @@ export const projects: ProjectItem[] = [
   },
 
   {
-    id: 3,
+    id: "prep-and-plate",
     title: "Prep & Plate",
-    categories: ["Full-stack", "SaaS"],
+    categories: ["Frontend", "SaaS"],
     imageUrl: "projects/prep-plate.webp",
     technologies: [
       TECH_STACK.tailwind,
       TECH_STACK["redux toolkit"],
       TECH_STACK["rtk thunks"],
       TECH_STACK.react,
-      TECH_STACK["express js"],
-      TECH_STACK.prisma,
     ],
-    liveUrl: undefined,
-    githubUrl: undefined,
-    isClientProject: false,
+    role: "Responsive Frontend",
+    period: "Late 2024",
+    context: "Desktop → Mobile UX",
     description:
-      "- A web app that helps users plan daily meals and recipes easily.",
+      "A web app that helps users plan daily meals and recipes easily.",
+    caseStudy: prepAndPlateCaseStudy,
   },
   {
-    id: 4,
-    title: "Amazon Clone",
-    categories: ["Frontend"],
-    imageUrl: "projects/amazon-clone.png",
-    technologies: [TECH_STACK.html, TECH_STACK.css, TECH_STACK.javascript],
-    liveUrl: "https://amazon-clone-rho-steel-34.vercel.app/",
-    githubUrl: "https://github.com/miss-kniz/Amazon",
-    isClientProject: false,
-    description: "A demo website that mimics Amazon’s layout",
-  },
-  {
-    id: 5,
+    id: "linkspire",
     title: "LinkSpire",
     categories: ["Full-stack"],
     imageUrl: "projects/likhspire.webp",
@@ -142,11 +139,30 @@ export const projects: ProjectItem[] = [
     githubUrl:
       "https://github.com/miss-kniz/LikhSpire/blob/main/screenshots/demo.gif",
     isClientProject: false,
+    role: "Full-stack Developer",
+    period: "Mid 2025",
+    context: "Blogging platform",
     description:
       "A blogging platform where users can write, edit, and share posts.",
+    caseStudy: likhSpireCaseStudy,
   },
   {
-    id: 6,
+    id: "amazon-clone",
+    title: "Amazon Clone",
+    categories: ["Frontend"],
+    imageUrl: "projects/amazon-clone.png",
+    technologies: [TECH_STACK.html, TECH_STACK.css, TECH_STACK.javascript],
+    liveUrl: "https://amazon-clone-rho-steel-34.vercel.app/",
+    githubUrl: "https://github.com/miss-kniz/Amazon",
+    isClientProject: false,
+    description: "A demo website that mimics Amazon’s layout",
+    role: "Frontend Developer",
+    period: "Mid 2024",
+    context: "E-commerce platform clone",
+    caseStudy: amazonCaseStudy,
+  },
+  {
+    id: "movie-land",
     title: "Movie Land",
     categories: ["Frontend"],
     imageUrl: "projects/movie-land.png",
@@ -155,6 +171,10 @@ export const projects: ProjectItem[] = [
     githubUrl: "https://github.com/miss-kniz/Movie-App",
     isClientProject: false,
     description: "A web app to search and browse movies in real-time.",
+    role: "Frontend Developer",
+    period: "Early 2024",
+    context: "Movie search platform",
+    caseStudy: movieLandCaseStudy,
   },
 ];
 

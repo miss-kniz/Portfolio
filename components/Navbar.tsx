@@ -4,6 +4,7 @@ import aboutData from "@/config/user-data/about";
 import Button from "./ui/Button";
 import { useState, useEffect, RefObject } from "react";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "phosphor-react";
 
 export type NavbarProps = {
   sectionRefs?: Record<string, RefObject<HTMLElement | null>>;
@@ -11,6 +12,7 @@ export type NavbarProps = {
   showNavLinks?: boolean;
   navBgOpacity?: string;
   fixed?: boolean;
+  backToProjects?: boolean;
 };
 
 export default function Navbar({
@@ -19,6 +21,7 @@ export default function Navbar({
   showNavLinks = true,
   fixed = true,
   navBgOpacity = "bg-background/30 shadow-sm backdrop-blur-sm border-b border-gray-100",
+  backToProjects,
 }: NavbarProps) {
   const navItems = [
     "Home",
@@ -98,10 +101,17 @@ export default function Navbar({
               </button>
             ))}
         </nav>
-
-        <Button onClick={() => scrollTo("contact")} variant="primary">
-          Contact
-        </Button>
+        <div className="flex items-center gap-2 md:gap-4">
+          {backToProjects && (
+            <Button onClick={() => navigate("/#projects")} variant="secondary">
+              <ArrowLeft size={18} weight="bold" />
+              Back <span className="hidden md:inline-block">to Projects</span>
+            </Button>
+          )}
+          <Button onClick={() => scrollTo("contact")} variant="primary">
+            Contact
+          </Button>
+        </div>
       </div>
     </header>
   );
