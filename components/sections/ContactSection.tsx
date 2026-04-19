@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "../ui/Heading";
-import { MapPin, Phone, Envelope } from "phosphor-react";
+import { MapPin, Phone, Envelope, Calendar, Check, X } from "phosphor-react";
 import aboutData from "@/config/user-data/about";
 import Input from "../inputs/Input";
 import Textarea from "../inputs/Textarea";
@@ -10,8 +10,52 @@ import Button from "../ui/Button";
 import SocialLinks from "../ui/SocialLinks";
 
 const ContactSection: React.FC = () => {
-  const { contact, socialLinks, name } = aboutData;
-  const firstName = name.split(" ")[0];
+  const { contact, hero } = aboutData;
+  const ctaText = hero.primaryCtaText;
+  const ctaLink = hero.primaryCtaLink;
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
+
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => setToast(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
+      setToast({ message: "Message sent!", type: "success" });
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      setToast({ message: "Something went wrong", type: "error" });
+    }
+    setLoading(false);
+  };
 
   return (
     <section id="contact" className="py-12 px-4 lg:px-8">
@@ -77,19 +121,71 @@ const ContactSection: React.FC = () => {
           <div className="bg-primary-light p-6 rounded-2xl">
             <h3 className="text-lg font-semibold mb-6">Leave Your Info.</h3>
 
-            <form className="space-y-4">
-              <Input type="text" placeholder="Your Name" />
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <Input
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                type="text"
+                placeholder="Your Name"
+              />
 
-              <Input type="email" placeholder="Email Address" />
+              <Input
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                type="email"
+                placeholder="Email Address"
+              />
 
-              <Textarea rows={4} placeholder="Message" />
+              <Textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Message"
+              />
 
               {/* Button */}
-              <Button>Send Message</Button>
+              <Button className="w-full" type="submit" disabled={loading}>
+                {loading ? "Sending" : "Send Message"}
+              </Button>
+
+              <div className="flex items-center gap-2 text-black-light">
+                <div className="h-[0.5px] w-full bg-black-light"></div>
+                <div>OR</div>
+                <div className="h-[0.5px] w-full bg-black-light"></div>
+              </div>
+              <Button
+                className="w-full"
+                variant="outline"
+                type="button"
+                onClick={() => window.open(ctaLink, "_blank")}
+              >
+                <Calendar size={24} />
+                {ctaText}
+              </Button>
             </form>
           </div>
         </div>
       </div>
+      {toast && (
+        <div
+          className={`fixed bottom-6 border right-6 px-4 py-3 rounded-lg shadow-lg text-sm font-medium transition-all duration-300
+      ${
+        toast.type === "success"
+          ? "bg-green-500/80 border-green-500 text-white"
+          : "bg-red-500/80 border-red-500 text-white"
+      }
+    `}
+        >
+          <span className="flex items-center justify-start gap-2">
+            {toast.type === "success" ? <Check size={24} /> : <X />}{" "}
+            {toast.message}
+          </span>
+        </div>
+      )}
     </section>
   );
 };

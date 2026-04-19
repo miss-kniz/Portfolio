@@ -40,11 +40,7 @@ export default async function ProjectPage({
   return (
     <>
       <section className="min-h-screen">
-        {/* ── HERO
-          IMAGE NEEDED: full-bleed product screenshot as background.
-          Best choice: the memorial profile page with a real photo loaded.
-          File: public/projects/case-study/cherished-lives.png
-      */}
+        {/* ── HERO */}
         <div
           className="h-screen bg-primary-light w-full bg-cover bg-center relative"
           style={
@@ -55,7 +51,12 @@ export default async function ProjectPage({
         >
           <div className="h-full w-full bg-linear-to-t text-center from-background via-background/50 to-background/50 flex flex-col items-center justify-between">
             <div className="w-full">
-              <Navbar showNavLinks={false} fixed={false} navBgOpacity={""} />
+              <Navbar
+                backToProjects={true}
+                showNavLinks={false}
+                fixed={false}
+                navBgOpacity={""}
+              />
             </div>
 
             <div className="flex flex-col items-center gap-3">
@@ -122,7 +123,7 @@ export default async function ProjectPage({
               center={false}
             />
             <SimplePara>{caseStudy?.overview}</SimplePara>
-            <div className="flex gap-2 mt-6 flex-wrap">
+            <div className="flex gap-2 mt-6 flex-wrap my-4">
               {project.technologies.map((tech, index) => {
                 const isHighlight = highlightTechs.includes(tech);
                 return (
@@ -140,13 +141,15 @@ export default async function ProjectPage({
               })}
             </div>
           </div>
-          {caseStudy?.overviewImage && (
-            <img
-              src={caseStudy.overviewImage}
-              alt={`${project.title} overview`}
-              className="w-full rounded-xl object-cover border border-border"
-            />
-          )}
+          <div>
+            {caseStudy?.overviewImage && (
+              <img
+                src={caseStudy.overviewImage}
+                alt={`${project.title} overview`}
+                className="w-full rounded-xl object-cover border border-border"
+              />
+            )}
+          </div>
         </div>
 
         {/* ── TECHNICAL CHALLENGES — no image */}

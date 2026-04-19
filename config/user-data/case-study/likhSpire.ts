@@ -89,7 +89,7 @@ README.md        (project documentation)
       desc: "End-to-end application built with backend focus",
     },
     {
-      value: "PostgreSQL",
+      value: "Postgres",
       desc: "Hands-on relational database experience",
     },
     {
