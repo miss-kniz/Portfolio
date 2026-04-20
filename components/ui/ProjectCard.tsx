@@ -10,6 +10,7 @@ interface ProjectCardProps {
   technologies: string[];
   liveUrl?: string;
   id: string;
+  githubUrl?: string;
 }
 
 export default function ProjectCard({
@@ -19,6 +20,7 @@ export default function ProjectCard({
   technologies,
   liveUrl,
   id,
+  githubUrl,
 }: ProjectCardProps) {
   const router = useRouter();
   const navigateToProject = (id: string) => {
@@ -31,9 +33,9 @@ export default function ProjectCard({
     >
       {/* Image */}
       <div className="relative w-full h-fit px-2 m-2 overflow-hidden rounded-lg group mx-auto">
-        {liveUrl && (
+        {(liveUrl || githubUrl) && (
           <a
-            href={liveUrl}
+            href={liveUrl ? liveUrl : githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             title="View Live Project"
@@ -41,7 +43,7 @@ export default function ProjectCard({
             onClick={(e) => e.stopPropagation()}
           >
             <NavigationArrow weight="bold" className="h-5 w-5" />
-            <span className="text-xs">Live</span>
+            <span className="text-xs">{liveUrl ? "Live" : "Code"}</span>
           </a>
         )}
         <div className="overflow-hidden rounded-xl">
@@ -65,7 +67,7 @@ export default function ProjectCard({
         )}
 
         {/* Technologies as small text chips */}
-        <div className="flex gap-2 mb-4 flex-wrap">
+        <div className="flex gap-2 mb-1 flex-wrap">
           {technologies.map((tech, index) => {
             const isHighlight = highlightTechs.includes(tech);
             return (
@@ -82,6 +84,12 @@ export default function ProjectCard({
               </span>
             );
           })}
+        </div>
+
+        <div className="my-2 flex items-center justify-between w-full">
+          <span className="text-xs font-medium bg-primary text-white rounded-md p-1 flex items-center gap-1">
+            View Case Study <NavigationArrow className="w-3 h-3" />
+          </span>
         </div>
       </div>
     </div>

@@ -1,11 +1,9 @@
-import { amazonCaseStudy } from "./case-study/amazon-clone";
 import {
   CaseStudy,
   cherishedLivesCaseStudy,
 } from "./case-study/cherished-lives";
 import { leadlyftCaseStudy } from "./case-study/leadlyft";
 import { likhSpireCaseStudy } from "./case-study/likhSpire";
-import { movieLandCaseStudy } from "./case-study/movie-app";
 import { prepAndPlateCaseStudy } from "./case-study/prep&plate";
 
 export interface ProjectItem {
