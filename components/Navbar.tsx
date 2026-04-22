@@ -3,7 +3,7 @@
 import aboutData from "@/config/user-data/about";
 import Button from "./ui/Button";
 import { useState, useEffect, RefObject } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ArrowLeft } from "phosphor-react";
 import ContactModal from "./modals/ContactModal";
 
@@ -32,6 +32,10 @@ export default function Navbar({
   ];
   const [activeNav, setActiveNav] = useState("Home"); // Track active link
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isNavigatingHome, setIsNavigatingHome] = useState(false);
+  const [isNavigatingProjects, setIsNavigatingProjects] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   // Scroll to section smoothly
   const scrollTo = (id: string) => {
@@ -68,7 +72,22 @@ export default function Navbar({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [sectionRefs]);
 
-  const navigate = useRouter().push;
+  const goHome = () => {
+    if (pathname === "/") {
+      scrollTo("home");
+      setActiveNav("Home");
+      return;
+    }
+
+    setIsNavigatingHome(true);
+    router.push("/#home");
+  };
+
+  const goToProjects = () => {
+    setIsNavigatingProjects(true);
+    router.push("/#projects");
+  };
+
   return (
     <>
       <header
@@ -77,14 +96,13 @@ export default function Navbar({
         <div className="container mx-auto  px-4 py-3 flex justify-between items-center max-w-7xl">
           {/* Logo */}
           <button
-            onClick={() => {
-              navigate("/");
-              scrollTo("home");
-              setActiveNav("Home");
-            }}
+            onClick={goHome}
+            aria-busy={isNavigatingHome}
             className="text-xl font-semibold tracking-wider font-sans"
           >
-            {aboutData?.name?.split(" ")[0] || "My Portfolio"}{" "}
+            {isNavigatingHome
+              ? "Opening home"
+              : aboutData?.name?.split(" ")[0] || "My Portfolio"}{" "}
           </button>
 
           {/* Navigation */}
@@ -107,10 +125,15 @@ export default function Navbar({
           <div className="flex items-center gap-2 md:gap-4">
             {backToProjects && (
               <Button
-                onClick={() => navigate("/#projects")}
+                onClick={goToProjects}
                 variant="secondary"
+                disabled={isNavigatingProjects}
               >
-                <ArrowLeft size={18} weight="bold" />
+                {isNavigatingProjects ? (
+                  <span className="h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin" />
+                ) : (
+                  <ArrowLeft size={18} weight="bold" />
+                )}
                 Back <span className="hidden md:inline-block">to Projects</span>
               </Button>
             )}

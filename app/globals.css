@@ -87,6 +87,43 @@ button {
   animation: infinite-scroll 25s linear infinite;
 }
 
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes loading-bar-short {
+  0%,
+  100% {
+    transform: translateX(-20%);
+    width: 40%;
+  }
+  50% {
+    transform: translateX(110%);
+    width: 55%;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.8s linear infinite;
+}
+
+.animate-loading-bar-short {
+  animation: loading-bar-short 1.4s ease-in-out infinite;
+}
+
+.animate-loading-bar-medium {
+  animation: loading-bar-short 1.8s ease-in-out infinite;
+}
+
+.animate-loading-bar-long {
+  animation: loading-bar-short 2s ease-in-out infinite;
+}
+
 .glass-btn {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
