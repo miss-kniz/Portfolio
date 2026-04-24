@@ -1,10 +1,12 @@
-"use client";
-
-import { highlightTechs } from "@/config/user-data/projects";
+import { highlightTechs, TECH_STACK } from "@/config/user-data/projects";
 import Heading from "./Heading";
-import { NavigationArrow } from "phosphor-react";
+import {
+  ArrowArcLeft,
+  ArrowBendLeftDown,
+  NavigationArrow,
+} from "phosphor-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -14,6 +16,7 @@ interface ProjectCardProps {
   liveUrl?: string;
   id: string;
   githubUrl?: string;
+  onNavigate?: () => void;
 }
 
 export default function ProjectCard({
@@ -24,54 +27,22 @@ export default function ProjectCard({
   liveUrl,
   id,
   githubUrl,
+  onNavigate,
 }: ProjectCardProps) {
   const router = useRouter();
-  const [isNavigating, setIsNavigating] = useState(false);
-
-  useEffect(() => {
-    router.prefetch(`/projects/${id}`);
-  }, [id, router]);
-
   const navigateToProject = (id: string) => {
-    setIsNavigating(true);
-    router.push(`/projects/${id}`);
+    onNavigate?.();
+
+    setTimeout(() => {
+      router.push(`/projects/${id}`);
+    }, 150);
   };
+
   return (
     <div
-      className={`group relative bg-glass rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden h-full flex flex-col items-start cursor-pointer ${isNavigating ? "scale-[0.99] opacity-90" : ""}`}
-      onClick={() => {
-        if (!isNavigating) navigateToProject(id);
-      }}
-      onKeyDown={(e) => {
-        if ((e.key === "Enter" || e.key === " ") && !isNavigating) {
-          e.preventDefault();
-          navigateToProject(id);
-        }
-      }}
-      role="button"
-      tabIndex={0}
-      aria-busy={isNavigating}
+      className="group relative bg-glass rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col items-start cursor-pointer"
+      onClick={() => navigateToProject(id)}
     >
-      {isNavigating && (
-        <div className="absolute inset-0 z-20 bg-background/35 backdrop-blur-[2px]">
-          <div className="absolute inset-x-3 top-3 rounded-full border border-primary/15 bg-white/80 px-3 py-2 shadow-sm backdrop-blur-md">
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-full border border-primary/15 bg-primary/5 flex items-center justify-center">
-                <span className="h-3.5 w-3.5 rounded-full border-2 border-primary border-t-transparent animate-spin" />
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">
-                  Opening case study
-                </p>
-                <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-primary/10">
-                  <div className="h-full w-2/5 rounded-full bg-primary animate-loading-bar-short" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Image */}
       <div className="relative w-full h-fit px-2 m-2 overflow-hidden rounded-lg group mx-auto">
         {(liveUrl || githubUrl) && (

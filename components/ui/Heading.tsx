@@ -1,3 +1,4 @@
+import { cn } from "@/helpers/merge-helper";
 import React from "react";
 
 type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5";
@@ -29,12 +30,12 @@ const Heading = ({
 
   return (
     <Tag
-      className={`
+      className={cn(`
         leading-none
         ${sizeStyles[as]}
         ${center ? "text-center" : "text-left"}
         ${className}
-      `}
+      `)}
     >
       {normalText}{" "}
       {highlightText && <span className="text-primary">{highlightText}</span>}

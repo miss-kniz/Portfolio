@@ -6,6 +6,7 @@ import { Lightbulb } from "phosphor-react";
 import ProjectCard from "../ui/ProjectCard";
 import { projects, ProjectItem } from "@/config/user-data/projects";
 import Button from "../ui/Button";
+import Loader from "../ui/Loader";
 
 const ProjectsSection = forwardRef<HTMLElement, {}>(
   (props, ref: Ref<HTMLElement>) => {
@@ -13,6 +14,7 @@ const ProjectsSection = forwardRef<HTMLElement, {}>(
     const [visibleCount, setVisibleCount] = useState<number>(2); // default for mobile
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [showAll, setShowAll] = useState<boolean>(false);
+    const [isNavigating, setIsNavigating] = useState(false);
 
     // Detect window width for responsive default visible count
     useEffect(() => {
@@ -97,13 +99,18 @@ const ProjectsSection = forwardRef<HTMLElement, {}>(
               </button>
             ))}
           </div>
+          {isNavigating && <Loader />}
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {filteredProjects
               .slice(0, visibleCount)
               .map((project: ProjectItem) => (
-                <ProjectCard key={project.id} {...project} />
+                <ProjectCard
+                  key={project.id}
+                  onNavigate={() => setIsNavigating(true)}
+                  {...project}
+                />
               ))}
           </div>
 

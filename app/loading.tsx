@@ -1,10 +1,5 @@
-import RouteLoadingScreen from "@/components/ui/RouteLoadingScreen";
+import Loader from "@/components/ui/Loader";
 
 export default function Loading() {
-  return (
-    <RouteLoadingScreen
-      title="Preparing your next view"
-      subtitle="Just a moment while the portfolio loads cleanly."
-    />
-  );
+  return <Loader />;
 }
