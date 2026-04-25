@@ -8,6 +8,7 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import Footer from "@/components/ui/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { useRef } from "react";
 
 export const portfolioForJob = true; // can be for freelancing the service section and others will work
@@ -19,39 +20,41 @@ export default function HomePage() {
   const skillsRef = useRef<HTMLElement>(null);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar
-        sectionRefs={{
-          Home: homeRef,
-          About: aboutRef,
-          Projects: projectsRef,
-          Skills: skillsRef,
-        }}
-        portfolioForJob={portfolioForJob}
-      />
+    <ThemeProvider defaultTheme="system" enableToggle={true}>
+      <div className="min-h-screen bg-background text-foreground">
+        <Navbar
+          sectionRefs={{
+            Home: homeRef,
+            About: aboutRef,
+            Projects: projectsRef,
+            Skills: skillsRef,
+          }}
+          portfolioForJob={portfolioForJob}
+        />
 
-      <HeroSection ref={homeRef} portfolioForJob={portfolioForJob} />
+        <HeroSection ref={homeRef} portfolioForJob={portfolioForJob} />
 
-      <AboutSection ref={aboutRef} />
+        <AboutSection ref={aboutRef} />
 
-      <ProjectsSection ref={projectsRef} />
+        <ProjectsSection ref={projectsRef} />
 
-      {!portfolioForJob ? (
-        <ServicesSection ref={skillsRef} />
-      ) : (
-        <SkillsSection ref={skillsRef} />
-      )}
+        {!portfolioForJob ? (
+          <ServicesSection ref={skillsRef} />
+        ) : (
+          <SkillsSection ref={skillsRef} />
+        )}
 
-      <Footer portfolioForJob={portfolioForJob} />
-      <BottomNav
-        sectionRefs={{
-          Home: homeRef,
-          About: aboutRef,
-          Projects: projectsRef,
-          Skills: skillsRef,
-        }}
-        portfolioForJob={portfolioForJob}
-      />
-    </div>
+        <Footer portfolioForJob={portfolioForJob} />
+        <BottomNav
+          sectionRefs={{
+            Home: homeRef,
+            About: aboutRef,
+            Projects: projectsRef,
+            Skills: skillsRef,
+          }}
+          portfolioForJob={portfolioForJob}
+        />
+      </div>
+    </ThemeProvider>
   );
 }

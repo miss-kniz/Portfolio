@@ -6,6 +6,7 @@ import { useState, useEffect, RefObject } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowLeft } from "phosphor-react";
 import ContactModal from "./modals/ContactModal";
+import ThemeToggle from "./ThemeToggle";
 
 export type NavbarProps = {
   sectionRefs?: Record<string, RefObject<HTMLElement | null>>;
@@ -123,6 +124,9 @@ export default function Navbar({
               ))}
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
+            {/* Theme Toggle */}
+            <ThemeToggle />
+            
             {backToProjects && (
               <Button
                 onClick={goToProjects}

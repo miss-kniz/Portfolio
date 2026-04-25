@@ -2,6 +2,10 @@
 @import "https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=League+Spartan:wght@100..900&display=swap";
 @import "tailwindcss";
 
+/* ========================================
+   THEME CSS VARIABLES
+   Edit these in config/theme.ts instead of here
+   ======================================== */
 :root {
   --background: #ffffff;
   --foreground: 14 5 22;
@@ -24,6 +28,15 @@
   }
 }
 
+/* Dark mode class for manual toggle */
+.dark {
+  --background: #0e0516;
+  --foreground: 237 237 237;
+  --black-light: #99a1af;
+  --primary-light: #7a2cbf36;
+  --primary-dark: #9d4edd;
+}
+
 @theme inline {
   --color-primary: var(--primary);
   --color-background: var(--background);
@@ -32,7 +45,6 @@
   --color-primary-dark: var(--primary-dark);
   --color-black-light: var(--black-light);
   --color-glass: var(--glass);
-
 
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-serif);
